@@ -10,6 +10,7 @@ import {
 import GetTodo from './components/todo/GetTodo';
 import PostTodo from './components/todo/PostTodo';
 import PutTodo from './components/todo/PutTodo';
+import SignIn from './components/auth/SignIn';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
     <BrowserRouter>
       <Navbar />
       <Routes>
+        {/* auth */}
+        <Route path="login" element={<SignIn />} />
 
         {/* todo */}
         <Route path="postTodo" element={<PostTodo />} />
