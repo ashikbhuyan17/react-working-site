@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TodoPostForm = () => {
+const PostTodo = () => {
     return (
         <main className='flex justify-center items-start h-screen bg-gray-100'>
 
@@ -35,4 +35,4 @@ const TodoPostForm = () => {
     );
 };
 
-export default TodoPostForm;
+export default PostTodo;

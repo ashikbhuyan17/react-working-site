@@ -1,0 +1,96 @@
+.table {
+    width: 100%;
+}
+
+.table_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(240, 240, 240);
+}
+
+.table_header p {
+    color: black;
+}
+
+.add_new {
+    /* border: 1px solid black; */
+    padding: 10px 20px;
+    background-color: #0298cf;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit {
+    padding: 5px 10px;
+    background-color: rgb(21, 197, 21);
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.delete {
+    padding: 5px 10px;
+    background-color: red;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.input {
+    padding: 10px 20px;
+    margin-right: 20px;
+    outline: none;
+    color: black;
+    border: 1px solid #0298cf;
+    color: #0298cf;
+}
+
+.table_section {
+    height: 500px;
+    overflow: auto;
+}
+
+.table {
+    width: 100%;
+    table-layout: fixed;
+    min-width: 1000px;
+    border-collapse: collapse;
+}
+
+.table th {
+    position: sticky;
+    top: 0;
+    background-color: #f6f9fc;
+    color: #8493a5;
+    font-size: 15px;
+}
+
+th,
+td {
+    border-bottom: 1px solid #dddddd;
+    padding: 10px 20px;
+    word-break: break-all;
+    text-align: center;
+}
+
+.pagination-button {
+    border: 1px solid gray;
+    padding: 5px 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+
+
+.pagination-button:hover {
+    background-color: #dddddd;
+    transition: .3s;
+}
+
+::placeholder {
+    color: #0298cf;
+}
