@@ -3,9 +3,6 @@ import React, { useState } from 'react';
 const Navbar = () => {
     const [first, setfirst] = useState(false)
     const toggle_nav = () => {
-        // var navbar = document.getElementById('navbar')
-        // navbar.current.classList.add("hidden")
-        // document.querySelector("#navbar").classList.toggle("hidden");
         setfirst(!false)
     }
     return (

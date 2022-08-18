@@ -1,14 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/layout/Navbar/Navbar';
+import TodoPostForm from './components/todo/TodoPostForm';
 
 function App() {
   return (
     <div >
       <Navbar />
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
+      <TodoPostForm/>
     </div>
   );
 }
