@@ -84,7 +84,11 @@ td {
     border-radius: 5px;
 }
 
-
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .pagination-button:hover {
     background-color: #dddddd;
