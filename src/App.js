@@ -12,6 +12,8 @@ import PostTodo from './components/todo/PostTodo';
 import PutTodo from './components/todo/PutTodo';
 import SignIn from './components/auth/SignIn';
 import SignUp from './components/auth/SignUp';
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -20,7 +22,9 @@ function App() {
     //   <TodoPostForm/>
     // </div>
     <BrowserRouter>
+
       <Navbar />
+      <ToastContainer />
       <Routes>
         {/* auth */}
         <Route path="login" element={<SignIn />} />

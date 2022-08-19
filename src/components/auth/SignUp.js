@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
+import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 const SignUp = () => {
     let navigate = useNavigate();
@@ -35,10 +36,30 @@ const SignUp = () => {
             .then(data => {
                 console.log("...................", data.err)
                 if (data.err) {
-                    alert(data.err)
+                    // alert(data.err)
+                    toast.error(`${data.err}`, {
+                        position: "top-right",
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                    });
                 } else {
-                    alert(data.message)
-                    navigate('/login')
+                    // alert(data.message)
+                    toast.success(`${data.message}`, {
+                        position: "top-right",
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                    });
+                    setTimeout(() => {
+                        navigate('/login')
+                    }, 3000);
                 }
             })
         // const res = postData(data, url)
@@ -82,7 +103,6 @@ const SignUp = () => {
 
                 </form>
             </div>
-
         </main>
     )
 }
