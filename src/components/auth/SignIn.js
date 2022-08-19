@@ -12,6 +12,7 @@ const SignIn = () => {
             email: email,
             password: password
         }
+        console.log(data);
         const url = 'https://jsonplaceholder.typicode.com/posts'
         const res = postData(data, url)
         res.then(res => console.log(res))
@@ -53,6 +54,7 @@ const SignIn = () => {
                         <label htmlFor="email" className='text-gray-500 font-semibold'>Email</label>
                         <input type="email" className='w-full  bg-gray-50 py-2 text-gray-500 px-1 outline-none'
                             name='email'
+                            value={email}
                             onChange={e => setEmail(e.target.value)}
                         />
                     </div>
@@ -60,6 +62,7 @@ const SignIn = () => {
                         <label htmlFor="password" className='text-gray-500 font-semibold'>Password</label>
                         <input type="password" className='w-full  bg-gray-50 py-2 text-gray-500 px-1 outline-none'
                             name='password'
+                            value={password}
                             onChange={e => setPassword(e.target.value)}
                         />
                     </div>
