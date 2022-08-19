@@ -1,22 +1,97 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
+import { useNavigate } from "react-router-dom";
 import { sum } from '../lib/requestData'
 import postData from '../lib/requestData'
+import { toast } from "react-toastify";
+
 
 const SignIn = () => {
-    const [email, setEmail] = useState("")
+    let navigate = useNavigate();
+    const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
 
     const handleSubmit = () => {
         const data = {
-            email: email,
+            username: username,
             password: password
         }
         console.log(data);
-        const url = 'https://jsonplaceholder.typicode.com/posts'
-        const res = postData(data, url)
-        res.then(res => console.log(res))
-        res.catch(err => console.log("data not found"))
+        const url = 'http://localhost:5000/user/login'
+        const requestOption = {
+            method: "POST",
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        }
+        // const res = postData(url, data)
+        // console.log(".........", res)
+        // axios.post(url, data)
+        //     .then(data => {
+        //         console.log(data);
+        //         const newData = data.data
+        //         if (newData.error) {
+        //             toast.error(`${newData.error}`, {
+        //                 position: "top-right",
+        //                 autoClose: 2000,
+        //                 hideProgressBar: false,
+        //                 closeOnClick: true,
+        //                 pauseOnHover: true,
+        //                 draggable: true,
+        //                 progress: undefined,
+        //             });
+        //         }
+        //         else {
+        //             console.log("token", newData.access_token)
+        //             toast.success(`${newData.message}`, {
+        //                 position: "top-right",
+        //                 autoClose: 2000,
+        //                 hideProgressBar: false,
+        //                 closeOnClick: true,
+        //                 pauseOnHover: true,
+        //                 draggable: true,
+        //                 progress: undefined,
+        //             });
+        //             localStorage.setItem("token", newData.access_token)
+        //             setTimeout(() => {
+        //                 navigate('/getTodo')
+        //             }, 3000);
+        //         }
+        //     })
+
+        fetch(url, requestOption)
+            .then(response => response.json())
+            .then(data => {
+                console.log("...................", data)
+                if (data.error) {
+                    // alert(data.err)
+                    toast.error(`${data.error}`, {
+                        position: "top-right",
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                    });
+                } else {
+                    // alert(data.message)
+                    console.log("token", data.access_token)
+                    toast.success(`${data.message}`, {
+                        position: "top-right",
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                    });
+                    localStorage.setItem("token", data.access_token)
+                    setTimeout(() => {
+                        navigate('/getTodo')
+                    }, 3000);
+                }
+            })
+
     }
 
     useEffect(() => {
@@ -50,12 +125,12 @@ const SignIn = () => {
 
             <div className='bg-white w-6/12 lg:w-4/12 p-6 rounded shadow-sm mt-36'>
                 <form>
-                    <div className="email mb-4">
-                        <label htmlFor="email" className='text-gray-500 font-semibold'>Email</label>
-                        <input type="email" className='w-full  bg-gray-50 py-2 text-gray-500 px-1 outline-none'
-                            name='email'
-                            value={email}
-                            onChange={e => setEmail(e.target.value)}
+                    <div className=" mb-4">
+                        <label htmlFor="username" className='text-gray-500 font-semibold'>Username</label>
+                        <input type="username" className='w-full  bg-gray-50 py-2 text-gray-500 px-1 outline-none'
+                            name='username'
+                            value={username}
+                            onChange={e => setUsername(e.target.value)}
                         />
                     </div>
                     <div className="password mb-4">

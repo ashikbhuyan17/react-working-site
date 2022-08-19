@@ -6,13 +6,13 @@ export const sum = (a, b) => {
 }
 
 
-export default function postData(data, url) {
+export default function postData(url, data) {
     const requestOption = {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
     }
-    
-    const response = axios.post(url, requestOption)
+
+    const response = axios.post(url, data)
     return response
 }
