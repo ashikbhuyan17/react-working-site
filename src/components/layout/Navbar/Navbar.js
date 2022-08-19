@@ -1,10 +1,17 @@
-import React, { useState } from 'react';
-
+import React, { useEffect, useState } from 'react';
+import { decode } from '../../lib/token'
 const Navbar = () => {
-    const [first, setfirst] = useState(false)
+    const [first, setFirst] = useState(false)
+    const [token, setToken] = useState({})
+
     const toggle_nav = () => {
-        setfirst(!false)
+        setFirst(!false)
     }
+    useEffect(() => {
+        const token = decode()
+        setToken(token)
+    }, [])
+
     return (
         <div className='bg-slate-900'>
             <nav className='bg-slate-700 flex justify-between flex-wrap
@@ -34,16 +41,18 @@ const Navbar = () => {
                         <a href="#" className='lg:inline-block hover:text-green-400 block mt-5'>Home</a>
                         <a href="#" className='lg:inline-block hover:text-green-400 block mt-5'>Blog</a>
                         <a href="#" className='lg:inline-block hover:text-green-400 block mt-5 mb-3 '>About</a>
-                        <a href="#" className='
-                        lg:inline-block
-                        hover:text-green-400
-                        border rounded border-white
-                        hover:border-transparent
-                        hover:border-white
-                        block
-                        mt-5
-                        p-2
-                        '>Login / sign up</a>
+                        {
+                            token?.username ? <a href="#" className='lg:inline-block hover:text-green-400 block mt-5 mb-3 '>{token.username}</a> : <a href="#" className='
+                            lg:inline-block
+                            hover:text-green-400
+                            border rounded border-white
+                            hover:border-transparent
+                            hover:border-white
+                            block
+                            mt-5
+                            p-2
+                            '>Login / sign up</a>
+                        }
 
                     </div>
                 </div>

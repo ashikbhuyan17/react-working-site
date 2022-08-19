@@ -61,7 +61,7 @@ const GetTodo = () => {
                         <button className='pagination-button'>Previous</button>
                         <button className='pagination-button'>1</button>
                         <button className='pagination-button'>Next</button>
-                        
+
                     </div>
                 </div>
             </main>
