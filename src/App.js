@@ -14,6 +14,7 @@ import SignIn from './components/auth/SignIn';
 import SignUp from './components/auth/SignUp';
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import Article from './components/article-upload-image/AddArticle';
 
 function App() {
   return (
@@ -35,6 +36,10 @@ function App() {
         <Route path="postTodo" element={<PostTodo />} />
         <Route path="getTodo" element={<GetTodo />} />
         <Route path="getTodo/:getTodoId" element={<PutTodo />} />
+
+        {/* article for image upload */}
+        <Route path="article" element={<Article />} />
+
       </Routes>
     </BrowserRouter>
   );
