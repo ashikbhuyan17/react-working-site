@@ -16,12 +16,8 @@ const Article = () => {
         formData.append("article", article)
         formData.append("articleImage", filename)
 
-        const data = {
-            title: title,
-            article: article
-        }
-        console.log(formData);
         const url = 'http://localhost:5000/article'
+
         axios.post(url, formData)
             .then(res => {
                 console.log("res", res.data)
@@ -97,7 +93,7 @@ const Article = () => {
                         />
                     </div>
                     <div className="mb-4">
-                        <label htmlFor="articleImage" className='text-gray-500 font-semibold'>Article</label>
+                        <label htmlFor="articleImage" className='text-gray-500 font-semibold'>Image</label>
                         <input type="file" filename="articleImage" className='w-full  bg-gray-50 py-2 text-gray-500 px-1 outline-none'
                             onChange={onChangeFile}
                         />
