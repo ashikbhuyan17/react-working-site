@@ -1,24 +1,23 @@
 import React, { useReducer, useState } from 'react';
 
-
+const reducer = (state, action) => {
+    switch (action.type) {
+        case 'INCREASE':
+            return {
+                ...state,
+                count: state.count + 1
+            }
+        case 'DECREASE':
+            return {
+                ...state,
+                count: state.count - 1
+            }
+        default:
+            return state
+    }
+}
 
 const UseReducer3 = () => {
-    const reducer = (state, action) => {
-        switch (action.type) {
-            case 'INCREASE':
-                return {
-                    ...state,
-                    count: state.count + 1
-                }
-            case 'DECREASE':
-                return {
-                    ...state,
-                    count: state.count - 1
-                }
-            default:
-                return state
-        }
-    }
     const [userInput, setUserInput] = useState("")
     // const [count, setCount] = useState(0)
     const [state, dispatch] = useReducer(reducer, { count: 0 })
@@ -45,8 +44,6 @@ const UseReducer3 = () => {
             >
                 -
             </button>
-
-
         </div>
     );
 };
