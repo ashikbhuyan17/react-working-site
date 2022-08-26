@@ -12,7 +12,7 @@ const Modal = ({ modalText }) => {
 }
 const reducer = (state, action) => {
     // action.type,action.payload
-    if (action.type == "ADD") {
+    if (action.type === "ADD") {
         const allBooks = [...state.books, action.payload]
         return {
             ...state,
@@ -21,7 +21,7 @@ const reducer = (state, action) => {
             modalText: "Book is added"
         }
     }
-    if (action.type == "REMOVE") {
+    if (action.type === "REMOVE") {
         const filterBook = [...state.books].filter(book => book.id !== action.payload)
         return {
             ...state,

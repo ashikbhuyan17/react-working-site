@@ -19,7 +19,7 @@ const UseReducer1 = () => {
         e.preventDefault()
         // alert(bookName)
         setBooks((prevState) => {
-            console.log(prevState);
+            console.log("prevState", prevState);
             const newBook = { id: new Date().getTime().toString(), name: bookName }
             return [...prevState, newBook]
         })
