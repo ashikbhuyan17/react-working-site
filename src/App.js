@@ -15,6 +15,8 @@ import SignUp from './components/auth/SignUp';
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import Article from './components/article-upload-image/AddArticle';
+import UseReducer1 from './components/useReducer-anisul-islam-sir/UseReducer1';
+import UseReducer2 from './components/useReducer-anisul-islam-sir/UseReducer2';
 
 function App() {
   return (
@@ -39,6 +41,12 @@ function App() {
 
         {/* article for image upload */}
         <Route path="article" element={<Article />} />
+
+        {/* userReducer By Anisul Islam Sir */}
+        <Route path="UseReducer1" element={<UseReducer1 />} />
+        <Route path="UseReducer2" element={<UseReducer2 />} />
+
+
 
       </Routes>
     </BrowserRouter>
