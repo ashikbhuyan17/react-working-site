@@ -71,11 +71,6 @@ const UseReducer2 = () => {
             </form>
             {bookState.isModalOpen && <Modal modalText={bookState.modalText} />}
             {
-                // books.map(book => (
-                //     <div>
-                //         <li>{book.name}</li>
-                //     </div>
-                // ))
                 bookState.books.map(book => {
                     const { id, name } = book
                     return <div key={id}><li>{name} <button style={{ border: "1px solid black", marginLeft: "15px" }} onClick={() => handleRemove(id)}>Remove</button></li> </div>
