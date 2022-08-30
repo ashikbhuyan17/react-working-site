@@ -18,15 +18,12 @@ import Header from './components/layout/Header/Header';
 
 function App() {
   return (
-    // <div >
-    //   <Navbar />
-    //   <TodoPostForm/>
-    // </div>
     <BrowserRouter>
 
       {/* <Navbar /> */}
       <Header />
       <ToastContainer />
+
       <Routes>
         {/* auth */}
         <Route path="login" element={<SignIn />} />

@@ -20,10 +20,7 @@
     color: #fff;
 }
 
-html {
-    /* font-size: 62.5%; */
-    /* overflow-x: hidden; */
-}
+
 
 body {
     background: #f9f9f9;
@@ -38,7 +35,7 @@ header {
     width: 100%;
     background: #fff;
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
-    padding: 1rem 9%;
+    padding: 5px 9%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -56,7 +53,7 @@ header .logo span {
 
 header .navbar a {
     font-size: 18px;
-    margin-left: 2rem;
+    margin-left: 1.5rem;
     color: var(--purple);
 }
 
@@ -96,9 +93,15 @@ header label {
         padding: 5px 0;
     }
 
+    header .navbar a {
+        display: block;
+        margin: 0px 0;
+        font-size: 2rem;
+    }
+
     header .navbar a:hover {
         background: rgb(248, 248, 248);
-        padding: 10px;
+        padding: 5px;
     }
 
     header .navbar {
@@ -113,14 +116,10 @@ header label {
         transform-origin: top;
         transform: scaleY(0);
         opacity: 0;
+        transition: .5s;
     }
 
-    header .navbar a {
-        display: block;
-        margin: 2rem 0;
-        font-size: 2rem;
 
-    }
 
     header input:checked~.navbar {
         transform: scaleY(1);
