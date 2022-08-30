@@ -2,11 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/layout/Navbar/Navbar';
 import ReactDOM from "react-dom/client";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route, } from "react-router-dom";
 import GetTodo from './components/todo/GetTodo';
 import PostTodo from './components/todo/PostTodo';
 import PutTodo from './components/todo/PutTodo';
@@ -18,6 +14,7 @@ import Article from './components/article-upload-image/AddArticle';
 import UseReducer1 from './components/useReducer/useReducer-anisul-islam-sir/UseReducer1';
 import UseReducer2 from './components/useReducer/useReducer-anisul-islam-sir/UseReducer2';
 import UseReducer3 from './components/useReducer/english/UseReducer3';
+import Header from './components/layout/Header/Header';
 
 function App() {
   return (
@@ -27,7 +24,8 @@ function App() {
     // </div>
     <BrowserRouter>
 
-      <Navbar />
+      {/* <Navbar /> */}
+      <Header />
       <ToastContainer />
       <Routes>
         {/* auth */}
