@@ -25,10 +25,10 @@ function App() {
       <ToastContainer />
 
       <Routes>
+
         {/* auth */}
         <Route path="login" element={<SignIn />} />
         <Route path="register" element={<SignUp />} />
-
 
         {/* todo */}
         <Route path="postTodo" element={<PostTodo />} />
@@ -42,9 +42,6 @@ function App() {
         <Route path="UseReducer1" element={<UseReducer1 />} />
         <Route path="UseReducer2" element={<UseReducer2 />} />
         <Route path="UseReducer3" element={<UseReducer3 />} />
-
-
-
 
       </Routes>
     </BrowserRouter>
