@@ -1,31 +1,30 @@
 import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/layout/Navbar/Navbar';
-import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route, } from "react-router-dom";
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import GetTodo from './components/todo/GetTodo';
 import PostTodo from './components/todo/PostTodo';
 import PutTodo from './components/todo/PutTodo';
 import SignIn from './components/auth/SignIn';
 import SignUp from './components/auth/SignUp';
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Article from './components/article-upload-image/AddArticle';
 import UseReducer1 from './components/useReducer/useReducer-anisul-islam-sir/UseReducer1';
 import UseReducer2 from './components/useReducer/useReducer-anisul-islam-sir/UseReducer2';
 import UseReducer3 from './components/useReducer/english/UseReducer3';
 import Header from './components/layout/Header/Header';
+import SelectSearch from './components/reactSelect-search/SelectSearch';
 
 function App() {
   return (
     <BrowserRouter>
-
       {/* <Navbar /> */}
       <Header />
       <ToastContainer />
 
       <Routes>
-
         {/* auth */}
         <Route path="login" element={<SignIn />} />
         <Route path="register" element={<SignUp />} />
@@ -43,6 +42,8 @@ function App() {
         <Route path="UseReducer2" element={<UseReducer2 />} />
         <Route path="UseReducer3" element={<UseReducer3 />} />
 
+        {/* SelectSearch */}
+        <Route path="select-search" element={<SelectSearch />} />
       </Routes>
     </BrowserRouter>
   );
